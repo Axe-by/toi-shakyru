@@ -2,34 +2,91 @@
 <html lang="kk">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Тойға шақырту</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-  <h2>Тойға шақырту</h2>
-  <h1>Ерболат & Айдана</h1>
-
-  <p class="text">
-    Құрметті ағайын-туыс, дос-жаран!  
-    Сіздерді біздің ақ отауымыздың  
-    салтанатты тойына шақырамыз.
-  </p>
-
-  <div class="date">
-    📅 20 Маусым 2026  
-    <br>⏰ 18:00
+<!-- HERO -->
+<section class="hero">
+  <div class="overlay">
+    <h1>Раяна</h1>
+    <p>Тойға шақырту</p>
+    <span>07 Ақпан 2026ж</span>
   </div>
+</section>
 
-  <div id="timer"></div>
-
-  <p class="place">
-    📍 «Алтын Сарай» мейрамханасы
+<!-- INVITE -->
+<section class="invite">
+  <h2>Құрметті қонақтар!</h2>
+  <p>
+    Сіздерді өмірімізде көптен бері күткен —
+    тұсаукесер тойымыздың салтанатты кешіне
+    шын жүректен шақырамыз.
   </p>
+</section>
 
-  <button>🎉 Қуанышымызға ортақ болыңыз</button>
-</div>
+<!-- TIMER -->
+<section class="timer-section">
+  <h2>Тойға дейін</h2>
+  <div id="timer"></div>
+</section>
+
+<!-- DETAILS -->
+<section class="details">
+  <div>
+    <h3>📅 Күні</h3>
+    <p>07 Ақпан 2026</p>
+  </div>
+  <div>
+    <h3>⏰ Уақыты</h3>
+    <p>18:00</p>
+  </div>
+  <div>
+    <h3>📍 Мекенжай</h3>
+    <p>«Хан-Төре» мейрамханасы</p>
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map">
+  <iframe 
+    src="https://www.google.com/maps?q=Алтын+Сарай+Алматы&output=embed"
+    loading="lazy">
+  </iframe>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp">
+  <h2>Тойға қатысуыңызды растаңыз</h2>
+
+  <form onsubmit="sendRSVP(event)">
+    <input type="text" id="name" placeholder="Аты-жөніңіз" required>
+
+    <select id="status" required>
+      <option value="">Келесіз бе?</option>
+      <option value="Келемін">Келемін</option>
+      <option value="Келе алмаймын">Келе алмаймын</option>
+    </select>
+
+    <input type="number" id="guests" placeholder="Неше адаммен" min="1">
+
+    <button type="submit">Жіберу</button>
+  </form>
+</section>
+
+<!-- WHATSAPP -->
+<section class="cta">
+  <h2>Сұрақтарыңыз болса</h2>
+  <a href="https://wa.me/77001234567" target="_blank">WhatsApp арқылы жазу</a>
+</section>
+
+<footer>
+  <p>❤️ Раяна ❤️</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
