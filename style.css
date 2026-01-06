@@ -1,12 +1,40 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --bg: #fffafc;
+  --text: #222;
+  --accent: #b30059;
+  --ornament: repeating-linear-gradient(
+    45deg,
+    rgba(179,0,89,0.08),
+    rgba(179,0,89,0.08) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #f2f2f2;
 }
 
 body {
+  margin: 0;
   font-family: 'Montserrat', sans-serif;
-  color: #333;
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+/* THEME BUTTON */
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 100;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: none;
+  background: var(--accent);
+  color: white;
 }
 
 /* HERO */
@@ -17,7 +45,7 @@ body {
 
 .overlay {
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.55);
   color: white;
   display: flex;
   flex-direction: column;
@@ -30,39 +58,28 @@ body {
   font-size: 48px;
 }
 
-.overlay p {
-  font-size: 20px;
-  margin: 10px 0;
-}
-
 /* SECTIONS */
 section {
   padding: 70px 20px;
   text-align: center;
 }
 
-.invite p {
-  max-width: 600px;
-  margin: auto;
-  font-size: 18px;
-}
-
-/* TIMER */
-#timer {
-  font-size: 28px;
-  margin-top: 20px;
+.ornament {
+  background-image: var(--ornament);
+  border-top: 4px solid var(--accent);
+  border-bottom: 4px solid var(--accent);
 }
 
 /* DETAILS */
 .details {
   display: flex;
-  justify-content: center;
   gap: 40px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 /* MAP */
-.map iframe {
+iframe {
   width: 100%;
   height: 350px;
   border: none;
@@ -77,41 +94,39 @@ section {
   gap: 15px;
 }
 
-.rsvp input,
-.rsvp select,
-.rsvp button {
+input, select, button {
   padding: 12px;
   font-size: 16px;
 }
 
-.rsvp button {
-  background: #b30059;
+button {
+  background: var(--accent);
   color: white;
   border: none;
   border-radius: 25px;
 }
 
-/* CTA */
-.cta a {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 30px;
-  background: #b30059;
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
+/* QR */
+.qr img {
+  width: 180px;
+  margin-top: 15px;
 }
 
 /* FOOTER */
 footer {
-  background: #111;
-  color: white;
   padding: 20px;
+  background: #000;
+  color: white;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .overlay h1 {
-    font-size: 34px;
-  }
+/* FADE ANIMATION */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
