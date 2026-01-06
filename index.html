@@ -8,35 +8,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light">
+
+<!-- THEME TOGGLE -->
+<button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero fade">
   <div class="overlay">
     <h1>Раяна</h1>
     <p>Тойға шақырту</p>
-    <span>07 Ақпан 2026ж</span>
+    <span>07 Ақпан 2026</span>
   </div>
 </section>
 
-<!-- INVITE -->
-<section class="invite">
+<section class="invite fade ornament">
   <h2>Құрметті қонақтар!</h2>
   <p>
-    Сіздерді өмірімізде көптен бері күткен —
+    Сіздерді өмірімізде көптен күткен —
     тұсаукесер тойымыздың салтанатты кешіне
     шын жүректен шақырамыз.
   </p>
 </section>
 
-<!-- TIMER -->
-<section class="timer-section">
+<section class="timer-section fade">
   <h2>Тойға дейін</h2>
   <div id="timer"></div>
 </section>
 
-<!-- DETAILS -->
-<section class="details">
+<section class="details fade ornament">
   <div>
     <h3>📅 Күні</h3>
     <p>07 Ақпан 2026</p>
@@ -51,41 +51,34 @@
   </div>
 </section>
 
-<!-- MAP -->
-<section class="map">
-  <iframe 
-    src="https://www.google.com/maps?q=Алтын+Сарай+Алматы&output=embed"
-    loading="lazy">
-  </iframe>
+<section class="map fade">
+  <iframe src="https://www.google.com/maps?q=Алтын+Сарай+Алматы&output=embed"></iframe>
 </section>
 
 <!-- RSVP -->
-<section class="rsvp">
+<section class="rsvp fade ornament">
   <h2>Тойға қатысуыңызды растаңыз</h2>
-
   <form onsubmit="sendRSVP(event)">
-    <input type="text" id="name" placeholder="Аты-жөніңіз" required>
-
+    <input id="name" placeholder="Аты-жөніңіз" required>
     <select id="status" required>
       <option value="">Келесіз бе?</option>
-      <option value="Келемін">Келемін</option>
-      <option value="Келе алмаймын">Келе алмаймын</option>
+      <option>Келемін</option>
+      <option>Келе алмаймын</option>
     </select>
-
-    <input type="number" id="guests" placeholder="Неше адаммен" min="1">
-
+    <input id="guests" type="number" placeholder="Неше адаммен">
     <button type="submit">Жіберу</button>
   </form>
 </section>
 
-<!-- WHATSAPP -->
-<section class="cta">
-  <h2>Сұрақтарыңыз болса</h2>
-  <a href="https://wa.me/77076212009" target="_blank">WhatsApp арқылы жазу</a>
+<!-- QR -->
+<section class="qr fade">
+  <h2>Шақыртуды бөлісу</h2>
+  <img id="qr">
+  <p>QR-кодты сканерлеңіз</p>
 </section>
 
-<footer>
-  <p>❤️ Раяна ❤️</p>
+<footer class="fade">
+  ❤️ Раяна ❤️
 </footer>
 
 <script src="script.js"></script>
